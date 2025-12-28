@@ -1,1 +1,1 @@
-# Projeto base para o curso
+# Projeto base para manipulação da DOM com javascript puro
