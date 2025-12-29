@@ -14,9 +14,9 @@ const reset = document.querySelector(".reset");
 
 const ash = document.querySelector("#ash");
 
-const charmander = document.querySelector("#charmander");
-const pikachu = document.querySelector("#pikachu");
-const zubat = document.querySelector("#zubat");
+const charmander = document.querySelector("#charmanderr");
+const pikachu = document.querySelector("#pikachuu");
+const zubat = document.querySelector("#zubatt");
 
 
 
