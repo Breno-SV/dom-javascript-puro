@@ -50,24 +50,25 @@ h1 {
     width: 55px;
 
 }
+
 #ash {
     right: 2px;
     z-index: 1;
 }
 
-#zubat {
+#zubatt {
     display: none;
     right: 90px;
     top: 550px;
 }
 
-#pikachu {
+#pikachuu {
     display: none;
     right: 600px;
     top: 330px;
 }
 
-#charmander {
+#charmanderr {
     display: none;
 
     width: 65px;
@@ -85,7 +86,7 @@ h1 {
 } 
 */
 
-#reset {
+#restart {
     display: none;
 
     /*  box model - margin, border, padding, content.
@@ -103,7 +104,7 @@ h1 {
     z-index: 3;
 }
 
-#reset:hover {
+#restart:hover {
     opacity: 0.8;
     transform: scale(1.05);
 }
