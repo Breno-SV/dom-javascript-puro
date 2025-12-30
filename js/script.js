@@ -22,8 +22,40 @@ const zubat = document.querySelector("#zubatt");
 // function teste() {}
 // body.addEventListener("keydown", teste);
 
+function getRightPosition (){
+    console.log (ash.style.right);
+}
+
+function getTopPosition (){
+    console.log (ash.style.top);
+}
+
 body.addEventListener("keydown", (Event) => {
-    Event.stopPropagation
+    Event.stopPropagation();
+
+    switch (Event.code) {
+        
+        case 'ArrowLeft':
+        getRightPosition();
+        getTopPosition();
+        ash.src = "../assets/leftt.png";
+        break;
+
+        case 'ArrowRight':
+        ash.src = "../assets/rightt.png";
+        break;
+
+        case 'ArrowDown':
+        ash.src = "../assets/frontt.png";
+        break;
+
+        case 'ArrowUp':
+        ash.src = "../assets/backk.png";
+        break;
+
+        default:
+        break;
+    }
 });
 
 
