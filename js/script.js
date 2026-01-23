@@ -14,9 +14,9 @@ const reset = document.querySelector(".restart");
 
 const ash = document.querySelector("#ash");
 
-const charmander = document.querySelector("#charmanderr");
-const pikachu = document.querySelector("#pikachuu");
-const zubat = document.querySelector("#zubatt");
+const charmanderr = document.querySelector("#charmanderr");
+const pikachuu = document.querySelector("#pikachuu");
+const zubatt = document.querySelector("#zubatt");
 
 let findCharmanderr = false;
 let findPikachuu = false;
@@ -57,6 +57,32 @@ function verifyLookPokemons(to){
         to === 'ArrowLeft'
             ? `${getRightPosition() - 64}px`
             : `${getRightPosition() + 64}px`;
+    
+    if (findCharmanderr) {
+       const newTopPosition = to = "ArrowUp" 
+        ? `${getTopPosition() + 8}px` 
+        : `${getTopPosition() - 8}px`
+        
+        charmanderr.style.right = pokemonsRightPosition;
+        charmanderr.style.top = newTopPosition;
+    }
+    
+    if (findPikachuu) {
+       const newTopPosition = to = "ArrowUp" 
+        ? `${getTopPosition() + 36}px` 
+        : `${getTopPosition() - 36}px`
+        
+        pikachuu.style.right = pokemonsRightPosition;
+        pikachuu.style.top = newTopPosition;
+    }
+
+    if (findZubatt) {
+       const newTopPosition = to = "ArrowUp" 
+        ? `${getTopPosition() + 72}px` 
+        : `${getTopPosition() - 72}px`
+        
+        zubatt.style.right = pokemonsRightPosition;
+        zubatt.style.top = newTopPosition;
     }
 
     if(
