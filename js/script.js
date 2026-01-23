@@ -18,6 +18,10 @@ const charmander = document.querySelector("#charmanderr");
 const pikachu = document.querySelector("#pikachuu");
 const zubat = document.querySelector("#zubatt");
 
+let findCharmanderr = false;
+let findPikachuu = false;
+let findZubatt = false;
+
 const audio = document.querySelector("audio");
 audio.volume = 0.1;
 
@@ -46,6 +50,51 @@ function getRightPosition() {
 function getTopPosition() {
     //console.log(ash.style.top);
     return parseInt(ash.style.top.split("px")) || 2;
+}
+
+function verifyLookPokemons(to){
+    const pokemonsRightPosition =
+        to === 'ArrowLeft'
+            ? `${getRightPosition() - 64}px`
+            : `${getRightPosition() + 64}px`;
+    }
+
+    if(
+        getTopPosition() >= 2 && 
+        getTopPosition() <= 98 && 
+        getRightPosition() >= 130 && 
+        getRightPosition() <= 216
+    ){
+        charmanderr.style.display = "block";
+        findCharmanderr = true;
+        return;
+    }
+}
+
+function verifyLookPokemons(){
+    if(
+        getTopPosition() >= 474 && 
+        getTopPosition() <= 594 && 
+        getRightPosition() <= 138 && 
+        getRightPosition() >= 42
+    ){
+        zubatt.style.display = "block";
+        findZubatt = true;
+        return;
+    }
+}
+
+function verifyLookPokemons(){
+    if(
+        getTopPosition() >= 266 && 
+        getTopPosition() <= 394 && 
+        getRightPosition() >= 546 && 
+        getRightPosition() <= 650
+    ){
+        pikachuu.style.display = "block";
+        findPikachuu = true;
+        return;
+    }
 }
 
 body.addEventListener("keydown", (Event) => {
@@ -84,5 +133,7 @@ body.addEventListener("keydown", (Event) => {
         default:
             break;
     }
+
+    verifyLookPokemons(Event.code);
 });
 

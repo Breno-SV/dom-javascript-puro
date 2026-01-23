@@ -57,20 +57,19 @@ h1 {
 }
 
 #zubatt {
-    display: none;
+    /*display: none;*/
     right: 90px;
     top: 550px;
 }
 
 #pikachuu {
-    display: none;
+    /*display: none;*/
     right: 600px;
     top: 330px;
 }
 
 #charmanderr {
-    display: none;
-
+    /*display: none;*/
     width: 65px;
     right: 175px;
     top: 550px;
