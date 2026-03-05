@@ -93,8 +93,9 @@ h1 {
     width: largura dessa imagem
     height: altura da imagem */
 
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    top: 48px;
+    left: 48px;
 
     cursor: pointer;
 

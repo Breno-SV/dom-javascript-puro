@@ -10,7 +10,7 @@ const body = document.querySelector("body");
 const game = document.querySelector(".game");
 
 const count = document.querySelector("h1");
-const reset = document.querySelector(".restart");
+const reset = document.querySelector("#restart");
 
 const ash = document.querySelector("#ash");
 
@@ -36,6 +36,49 @@ musicControl.addEventListener('click', (Event) => {
     `${Event.target.src}`.includes("onn.png") ? audio.play() : audio.pause();
 });
 
+restart.addEventListener('click', () => {
+    window.location.reload();
+    restart.style.display = "none";
+});
+
+function clearCharactersAndFinishGame(){
+    ash.style.display = "none";
+    pikachuu.style.display = "none";
+    charmanderr.style.display = "none";
+    zubatt.style.display = "none";   
+
+    restart.style.display = "block";
+    count.textContent = "";
+}
+
+let currentCount = 20;
+
+const interval = setInterval(() => {
+    if (currentCount <= 0){
+        game.style.backgroundImage = "url('../assets/game_over.jpg')";
+        
+        clearCharactersAndFinishGame();
+        clearInterval(interval);
+        return;
+    }    
+    currentCount--;
+    count.textContent = currentCount;
+}, 1000)
+
+function finishGame (){
+    if(findCharmanderr && findPikachuu && findZubatt){
+        clearCharactersAndFinishGame();
+
+        const timeout = setTimeout(() => {
+            game.style.backgroundImage = "url('../assets/win.jpg')";
+
+            clearInterval(interval);
+            clearTimeout(timeout);
+            audio.pause();
+        }, 200);
+    }
+}
+
 function getRightPosition() {
     return parseInt(ash.style.right.split("px")) || 2;
 }
@@ -46,6 +89,8 @@ function getTopPosition() {
 
 // Função unificada para verificar todos os pokémons
 function verifyLookPokemons(to){
+
+    finishGame();
     const pokemonsRightPosition =
         to === 'ArrowLeft'
             ? `${getRightPosition() - 64}px`
