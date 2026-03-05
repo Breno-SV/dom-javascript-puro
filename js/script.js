@@ -1,7 +1,7 @@
 // .classes 
 // # ids
 // nome do elemento
-// div h1 => elemnto dentro de outro elemento
+// div h1 => elemento dentro de outro elemento
 
 // querySelector => seleciona apenas um elemento (o primeiro que ele encontrar)
 // querySelectorAll => seleciona todos os elementos e coloca dentro de um array 
@@ -36,22 +36,15 @@ musicControl.addEventListener('click', (Event) => {
     `${Event.target.src}`.includes("onn.png") ? audio.play() : audio.pause();
 });
 
-// também poderia usar a function dessa forma:
-// function teste() {}
-// body.addEventListener("keydown", teste);
-
 function getRightPosition() {
-    //console.log()
     return parseInt(ash.style.right.split("px")) || 2;
-
-    //console.log(position);
 }
 
 function getTopPosition() {
-    //console.log(ash.style.top);
     return parseInt(ash.style.top.split("px")) || 2;
 }
 
+// Função unificada para verificar todos os pokémons
 function verifyLookPokemons(to){
     const pokemonsRightPosition =
         to === 'ArrowLeft'
@@ -59,32 +52,33 @@ function verifyLookPokemons(to){
             : `${getRightPosition() + 64}px`;
     
     if (findCharmanderr) {
-       const newTopPosition = to = "ArrowUp" 
+       const newTopPosition = to === "ArrowUp" 
         ? `${getTopPosition() + 8}px` 
-        : `${getTopPosition() - 8}px`
+        : `${getTopPosition() - 8}px`;
         
         charmanderr.style.right = pokemonsRightPosition;
         charmanderr.style.top = newTopPosition;
     }
     
     if (findPikachuu) {
-       const newTopPosition = to = "ArrowUp" 
+       const newTopPosition = to === "ArrowUp" 
         ? `${getTopPosition() + 36}px` 
-        : `${getTopPosition() - 36}px`
+        : `${getTopPosition() - 36}px`;
         
         pikachuu.style.right = pokemonsRightPosition;
         pikachuu.style.top = newTopPosition;
     }
 
     if (findZubatt) {
-       const newTopPosition = to = "ArrowUp" 
+       const newTopPosition = to === "ArrowUp" 
         ? `${getTopPosition() + 72}px` 
-        : `${getTopPosition() - 72}px`
+        : `${getTopPosition() - 72}px`;
         
         zubatt.style.right = pokemonsRightPosition;
         zubatt.style.top = newTopPosition;
     }
 
+    // Verifica Charmanderr
     if(
         getTopPosition() >= 2 && 
         getTopPosition() <= 98 && 
@@ -93,11 +87,9 @@ function verifyLookPokemons(to){
     ){
         charmanderr.style.display = "block";
         findCharmanderr = true;
-        return;
     }
-}
 
-function verifyLookPokemons(){
+    // Verifica Zubatt
     if(
         getTopPosition() >= 474 && 
         getTopPosition() <= 594 && 
@@ -106,11 +98,9 @@ function verifyLookPokemons(){
     ){
         zubatt.style.display = "block";
         findZubatt = true;
-        return;
     }
-}
 
-function verifyLookPokemons(){
+    // Verifica Pikachuu
     if(
         getTopPosition() >= 266 && 
         getTopPosition() <= 394 && 
@@ -119,7 +109,6 @@ function verifyLookPokemons(){
     ){
         pikachuu.style.display = "block";
         findPikachuu = true;
-        return;
     }
 }
 
@@ -162,4 +151,3 @@ body.addEventListener("keydown", (Event) => {
 
     verifyLookPokemons(Event.code);
 });
-
